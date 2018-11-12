@@ -51,20 +51,17 @@ let quotes = [
 ];
 
 // Random Number Generation
-// Generates a random number based from 0 to 1 less than the length of the quotes array
-function generateRandomArrayIndex() {
-    // Get length of array
-    let max = quotes.length;
-
-    // Generate number between 0 and array length - 1
+// Generates a random number based from 0 (inclusive) to the given maximum (exclusive)
+function generateRandomNumberBetweenZeroAnd(max) {
+    // Generate number between 0 and maximum
     return Math.floor(Math.random() * max); 
 }
 
-// Random Quote Getter
+// Random Quote Retriever
 // Retrieves a random quote using a random index.
 function getRandomQuote() {
-    // Generate index
-    let index = generateRandomArrayIndex(quotes);
+    // Generate random number between 0 and quote array length
+    let index = generateRandomNumberBetweenZeroAnd(quotes.length);
 
     // Return quote at index
     return quotes[index];
