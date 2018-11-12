@@ -92,9 +92,14 @@ function randomBackgroundColor() {
     button.style.backgroundColor = colorHex;
 }
 
+// Set initial quote timeout
+let quoteTimeout = setTimeout(printQuote, 30000);
 
 // Quote printing function
 function printQuote() {
+    // Clear any timeout remaining
+    clearTimeout(quoteTimeout);
+
     // Get random quote
     let quote = getRandomQuote();
 
@@ -115,6 +120,9 @@ function printQuote() {
 
     // Set random background color
     randomBackgroundColor();
+
+    // Reset quote timeout
+    quoteTimeout = setTimeout(printQuote, 30000);
 }
 
 // Call printQuote function when loadQuote button is clicked
