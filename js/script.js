@@ -68,14 +68,15 @@ function generateRandomArrayIndex(array) {
     return Math.floor(Math.random() * max); 
 }
 
-/***
- Create the `getRandomQuote` function to:
-- use the random number to `return` a random quote object from the 
-    `quotes` array.
-***/
+// Random Quote Getter
+// Retrieves a random quote using a random index.
+function getRandomQuote() {
+    // Generate index
+    let index = generateRandomArrayIndex(quotes);
 
-
-
+    // Return quote at index
+    return quotes[index];
+}
 
 /***
  Create the `printQuote` function to: 
@@ -86,7 +87,6 @@ function generateRandomArrayIndex(array) {
     they are added to the HTML string.
 - set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
-
 
 
 
