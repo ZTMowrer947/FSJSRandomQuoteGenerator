@@ -59,10 +59,10 @@ let quotes = [
 ];
 
 // Random Number Generation
-// Generates a random number based from 0 to 1 less than the length of the given array
-function generateRandomArrayIndex(array) {
+// Generates a random number based from 0 to 1 less than the length of the quotes array
+function generateRandomArrayIndex() {
     // Get length of array
-    let max = array.length;
+    let max = quotes.length;
 
     // Generate number between 0 and array length - 1
     return Math.floor(Math.random() * max); 
