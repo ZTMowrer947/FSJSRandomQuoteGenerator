@@ -67,6 +67,32 @@ function getRandomQuote() {
     return quotes[index];
 }
 
+// Set random background color
+// Thanks to https://www.paulirish.com/2009/random-hex-color-code-snippets/ for helping with
+// the random color generation and hex conversion
+// Also thanks to https://www.w3schools.com/js/js_htmldom_css.asp for setting CSS styles in JavaScript
+function randomBackgroundColor() {
+    // Get value of 2 ^ 24 (because CSS uses 24-bit color using 6 hex digits)
+    let colorDepth = Math.pow(2, 24);
+
+    // Generate random number between 0 and 2 ^ 24
+    let colorNumber = generateRandomNumberBetweenZeroAnd(colorDepth);
+
+    // Convert color number to hexadecimal string with prepended hash
+    let colorHex = "#" + colorNumber.toString(16);
+
+    // Get body element
+    let body = document.querySelector("body");
+
+    // Get loadQuote button
+    let button = document.getElementById("loadQuote")
+
+    // Set background color on both elements
+    body.style.backgroundColor = colorHex;
+    button.style.backgroundColor = colorHex;
+}
+
+
 // Quote printing function
 function printQuote() {
     // Get random quote
@@ -86,6 +112,9 @@ function printQuote() {
 
     // Set innerHTML to HTML string
     quoteBox.innerHTML = quoteHtml;
+
+    // Set random background color
+    randomBackgroundColor();
 }
 
 // Call printQuote function when loadQuote button is clicked
