@@ -7,44 +7,54 @@ FSJS project 1 - A Random Quote Generator
 
 
 /*** 
-Add at least five quote objects to the `quotes` array.
-Give each quote object a `quote` and `source` property.
-
-Recommended: 
+Recommended: (I plan to do this but I am finding difficulty in finding either of these at the moment) 
 - Add at least one `year` and/or `citation` property to at least one quote object.
 ***/
 
 // Define array of quotes
 let quotes = [
     {
-        // Quote
+        // The quote itself
+        quote: "When you reach the end of your rope, tie a knot in it and hang on.",
+        
+        // The source/speaker of the quote
+        source: "Franklin D. Roosevelt",
     },
     {
-        // Quote 2
+        quote: "Be the change that you wish to see in the world.",
+        source: "Mahatma Gandhi",
     },
     {
-        // Quote 3
+        quote: "Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.",
+        source: "Thomas Edison",
     },
     {
-        // Quote 4
+        quote: "It is during our darkest moments that we must focus to see the light.",
+        source: "Aristotle",
     },
     {
-        // Quote 5
+        quote: "Innovation distinguishes between a leader and a follower.",
+        source: "Steve Jobs",
     },
     {
-        // Quote 6
+        quote: "If you can dream it, you can do it.",
+        source: "Walt Disney",
     },
     {
-        // Quote 7
+        quote: "Most people spend more time and energy going around problems than in trying to solve them.",
+        source: "Henry Ford",
     },
     {
-        // Quote 8
+        quote: "The direction in which education starts a man will determine his future in life.",
+        source: "Plato",
     },
     {
-        // Quote 9
+        quote: "When anger rises, think of the consequences.",
+        source: "Confucius",
     },
     {
-        // Quote 10
+        quote: "However difficult life may seem, there is always something you can do and succeed at.",
+        source: "Stephen Hawking", // RIP 1/8/1942 - 3/14/2018
     },
 ];
 
