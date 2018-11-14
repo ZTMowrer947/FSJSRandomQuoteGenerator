@@ -1,8 +1,6 @@
 // Treehouse FSJS Techdegree Unit 1 Project
 // Random Quote Generator
 
-// TODO: Add at least one `year` and/or `citation` property to at least one quote object.
-
 // Define array of quotes
 let quotes = [
     {
@@ -47,6 +45,12 @@ let quotes = [
     {
         quote: "However difficult life may seem, there is always something you can do and succeed at.",
         source: "Stephen Hawking", // RIP 1/8/1942 - 3/14/2018
+    },
+    {
+        quote: "The perfect is the enemy of the good.",
+        source: "Voltaire",
+        citation: "Dictionnaire philosophique",
+        year: 1764,
     },
 ];
 
