@@ -120,6 +120,23 @@ function printQuote() {
     // Append source to HTML string
     quoteHtml += "<p class=\"source\">" + quote.source;
 
+
+    // Append citation if quote has one
+    if (quote.citation) {
+        quoteHtml +=
+            "<span class=\"citation\">" +
+            quote.citation +
+            "</span>";
+    }
+
+    // Append year if quote has one
+    if (quote.year) {
+        quoteHtml +=
+            "<span class=\"year\">" +
+            quote.year +
+            "</span>";
+    }
+
     // Close HTML element and string
     quoteHtml += "</p>";
 
