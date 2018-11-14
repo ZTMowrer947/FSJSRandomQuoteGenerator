@@ -69,17 +69,24 @@ function getRandomQuote() {
 
 // Set random background color
 // Thanks to https://www.paulirish.com/2009/random-hex-color-code-snippets/ for helping with
-// the random color generation and hex conversion
+// the hex conversion
 // Also thanks to https://www.w3schools.com/js/js_htmldom_css.asp for setting CSS styles in JavaScript
 function randomBackgroundColor() {
-    // Get value of 2 ^ 24 (because CSS uses 24-bit color using 6 hex digits)
-    let colorDepth = Math.pow(2, 24);
+    // 256 values per color channel (red, green and blue)
+    let valuesPerColorChannel = 256;
 
-    // Generate random number between 0 and 2 ^ 24
-    let colorNumber = generateRandomNumberBetweenZeroAnd(colorDepth);
+    // Generate random number between 0 and 256 for red
+    let redNumber = generateRandomNumberBetweenZeroAnd(valuesPerColorChannel);
 
-    // Convert color number to hexadecimal string with prepended hash
-    let colorHex = "#" + colorNumber.toString(16);
+    // Same for green and blue
+    let greenNumber = generateRandomNumberBetweenZeroAnd(valuesPerColorChannel);
+    let blueNumber = generateRandomNumberBetweenZeroAnd(valuesPerColorChannel);
+
+    // Concatenate color numbers into hexadecimal string with prepended hash
+    let colorHex = "#" +
+        redNumber.toString(16) +
+        greenNumber.toString(16) +
+        blueNumber.toString(16);
 
     // Get body element
     let body = document.querySelector("body");
