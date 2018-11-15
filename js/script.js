@@ -215,19 +215,20 @@ function printQuote() {
         "</a>";
 
     // Append start of tags field
-    quoteHtml += "<span class=\"tags\">" +
-        "<ul class=\"tagList\">";
+    quoteHtml += "<p class=\"tags\">Tags: ";
 
     // Append each tag
-    quote.tags.forEach(function(tag) {
-        quoteHtml += "<li class=\"tag\">" +
-            tag +
-            "</li>";
+    quote.tags.forEach(function(tag, index) {
+        quoteHtml += tag;
+
+        // Add comma if index is less than array length - 1
+        if (index < quote.tags.length - 1) {
+            quoteHtml += ", ";
+        }
     });
 
     // End tags field and HTML string
-    quoteHtml += "</ul>" +
-        "</span>";
+    quoteHtml += "</p>";
 
     // Get quote-box div
     let quoteBox = document.getElementById("quote-box");
