@@ -9,48 +9,116 @@ let quotes = [
         
         // The source/speaker of the quote
         source: "Franklin D. Roosevelt",
+
+        // Web URL where quote was found
+        foundAt: "https://www.brainyquote.com/quotes/franklin_d_roosevelt_101840",
+
+        // List of tags related to the quote
+        tags: [
+            "hang",
+            "reach",
+        ],
     },
     {
-        quote: "Be the change that you wish to see in the world.",
+        quote: "You must be the change that you wish to see in the world.",
         source: "Mahatma Gandhi",
+        foundAt: "https://www.brainyquote.com/quotes/mahatma_gandhi_109075",
+        tags: [
+            "wish",
+            "change",
+            "world",
+        ],
     },
     {
         quote: "Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.",
         source: "Thomas Edison",
+        foundAt: "https://www.brainyquote.com/quotes/thomas_a_edison_149049?src=t_motivational",
+        tags: [
+            "success",
+            "try",
+        ],
     },
     {
         quote: "It is during our darkest moments that we must focus to see the light.",
         source: "Aristotle",
+        foundAt: "https://www.brainyquote.com/quotes/aristotle_119068",
+        tags: [
+            "darkness",
+            "light",
+            "focus",
+        ],
     },
     {
         quote: "Innovation distinguishes between a leader and a follower.",
         source: "Steve Jobs",
+        foundAt: "https://www.brainyquote.com/quotes/steve_jobs_173474",
+        tags: [
+            "leader",
+            "innovation",
+        ],
     },
     {
         quote: "If you can dream it, you can do it.",
         source: "Walt Disney",
+        foundAt: "https://www.brainyquote.com/quotes/walt_disney_130027?src=t_motivational",
+        tags: [
+            "dream",
+            "do",
+        ],
     },
     {
         quote: "Most people spend more time and energy going around problems than in trying to solve them.",
         source: "Henry Ford",
+        foundAt: "https://www.brainyquote.com/quotes/henry_ford_385983",
+        tags: [
+            "solve",
+            "time",
+            "energy",
+            "problems",
+        ],
     },
     {
         quote: "The direction in which education starts a man will determine his future in life.",
         source: "Plato",
+        foundAt: "https://www.brainyquote.com/quotes/plato_384971",
+        tags: [
+            "education",
+            "direction",
+            "future",
+            "life",
+        ],
     },
     {
         quote: "When anger rises, think of the consequences.",
         source: "Confucius",
+        foundAt: "https://www.brainyquote.com/quotes/confucius_132199",
+        tags: [
+            "anger",
+            "consequence",
+        ]
     },
     {
         quote: "However difficult life may seem, there is always something you can do and succeed at.",
         source: "Stephen Hawking", // RIP 1/8/1942 - 3/14/2018
+        foundAt: "https://www.brainyquote.com/quotes/stephen_hawking_627103",
+        tags: [
+            "difficult",
+            "suceed",
+            "do",
+            "always",
+        ],
     },
     {
-        quote: "The perfect is the enemy of the good.",
+        quote: "The best is the enemy of the good.",
         source: "Voltaire",
         citation: "Dictionnaire philosophique",
         year: 1764,
+        foundAt: "https://en.wikipedia.org/wiki/Perfect_is_the_enemy_of_good",
+        tags: [
+            "enemy",
+            "good",
+            "best",
+        ],
     },
 ];
 
