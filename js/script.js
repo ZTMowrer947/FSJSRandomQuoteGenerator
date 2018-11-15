@@ -266,3 +266,6 @@ loadQuote.addEventListener("mouseleave", function() {
     // Set button background color to match that of body
     loadQuote.style.backgroundColor = body.style.backgroundColor;
 }, false);
+
+// Load quote on page load
+window.onload = printQuote;
