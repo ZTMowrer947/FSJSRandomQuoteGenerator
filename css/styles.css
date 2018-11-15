@@ -68,6 +68,15 @@ body {
   font-style: normal;
 }
 
+.foundAt, .foundAt:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.foundAt:hover {
+  color: lightgray;
+}
+
 #loadQuote {
   position: fixed;
   width: 12em;
