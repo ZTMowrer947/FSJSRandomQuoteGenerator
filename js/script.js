@@ -163,12 +163,8 @@ function randomBackgroundColor() {
     // Get body element
     let body = document.querySelector("body");
 
-    // Get loadQuote button
-    let button = document.getElementById("loadQuote")
-
-    // Set background color on both elements
+    // Set background color on body element
     body.style.backgroundColor = colorHex;
-    button.style.backgroundColor = colorHex;
 }
 
 // Set initial quote timeout
@@ -243,5 +239,26 @@ function printQuote() {
     quoteTimeout = setTimeout(printQuote, 30000);
 }
 
+// Get loadQuote button
+let loadQuote = document.getElementById('loadQuote');
+
 // Call printQuote function when loadQuote button is clicked
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+loadQuote.addEventListener("click", printQuote, false);
+
+
+// Thanks for these next two event listeners go to
+// https://www.quirksmode.org/js/events_mouse.html for the mouseenter and mouseleave events
+
+// Set loadQuote to have translucent white background color when hovered over
+loadQuote.addEventListener("mouseenter", function() {
+    loadQuote.style.backgroundColor = "rgba(255, 255, 255, .25)"; // White with 25% opacity
+}, false);
+
+// Set loadQuote to have same background color as body when hovering ends
+loadQuote.addEventListener("mouseleave", function() {
+    // Get body element
+    let body = document.querySelector("body");
+
+    // Set button background color to match that of body
+    loadQuote.style.backgroundColor = body.style.backgroundColor;
+}, false);
