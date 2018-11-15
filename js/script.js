@@ -205,8 +205,29 @@ function printQuote() {
             "</span>";
     }
 
-    // Close HTML element and string
+    // Close HTML element
     quoteHtml += "</p>";
+
+    // Append URL quote was found at
+    quoteHtml +=
+        "<a class=\"foundAt\" href=\"" + quote.foundAt + "\">" +
+        quote.foundAt +
+        "</a>";
+
+    // Append start of tags field
+    quoteHtml += "<span class=\"tags\">" +
+        "<ul class=\"tagList\">";
+
+    // Append each tag
+    quote.tags.forEach(function(tag) {
+        quoteHtml += "<li class=\"tag\">" +
+            tag +
+            "</li>";
+    });
+
+    // End tags field and HTML string
+    quoteHtml += "</ul>" +
+        "</span>";
 
     // Get quote-box div
     let quoteBox = document.getElementById("quote-box");
