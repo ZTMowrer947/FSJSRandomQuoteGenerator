@@ -144,21 +144,21 @@ function getRandomQuote() {
 // the hex conversion
 // Also thanks to https://www.w3schools.com/js/js_htmldom_css.asp for setting CSS styles in JavaScript
 function randomBackgroundColor() {
-    // 256 values per color channel (red, green and blue)
-    let valuesPerColorChannel = 256;
+    // 16 values per hexadecimal digit
+    let valuesPerHexDigit = 16;
 
-    // Generate random number between 0 and 256 for red
-    let redNumber = generateRandomNumberBetweenZeroAnd(valuesPerColorChannel);
+    // Array to hold hexadecimal digits;
+    let hexDigits = [];
 
-    // Same for green and blue
-    let greenNumber = generateRandomNumberBetweenZeroAnd(valuesPerColorChannel);
-    let blueNumber = generateRandomNumberBetweenZeroAnd(valuesPerColorChannel);
+    // Randomly generate six hex digits and place them into hexDigits array as a hexadecimal digit
+    for (let i = 0; i < 6; i++) {
+        let hex = generateRandomNumberBetweenZeroAnd(valuesPerHexDigit);
 
-    // Concatenate color numbers into hexadecimal string with prepended hash
-    let colorHex = "#" +
-        redNumber.toString(16) +
-        greenNumber.toString(16) +
-        blueNumber.toString(16);
+        hexDigits.push(hex.toString(16));
+    }
+
+    // Join hexadecimal digits into string with prepended hash
+    let colorHex = "#" + hexDigits.join("");
 
     // Get body element
     let body = document.querySelector("body");
