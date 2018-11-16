@@ -210,7 +210,7 @@ function printQuote() {
 
     // Append URL quote was found at
     quoteHtml +=
-        "<a class=\"foundAt\" href=\"" + quote.foundAt + "\">" +
+        "<a class=\"foundAt\" href=\"" + quote.foundAt + "\" target=\"_blank\">" +
         quote.foundAt +
         "</a>";
 
