@@ -179,24 +179,37 @@ function printQuote() {
     // Clear any timeout remaining
     clearTimeout(quoteTimeout);
 
-    // Get random quote
-    let quote = getRandomQuote();
+    // Get current quote (if there is one)
+    let currentQuote = document.querySelector("p.quote");   
+
+    // Declare variable for random quote
+    let newQuote;
+
+    // Get random quote continually as long as currentQuote is not null (won't be on initial page load)
+    // or as long as the current and random quotes match
+    // This will always run at least once, and ensures that the same quote is not displayed multiple times
+    // in a row.
+    do {
+        // Get random quote
+        newQuote = getRandomQuote();
+    } while (currentQuote !== null && newQuote.quote === currentQuote.textContent);
+
 
     // Add quote and source into HTML string
-    let quoteHtml = `<p class="quote">${quote.quote}</p>
-                    <p class="source">${quote.source}`;
+    let quoteHtml = `<p class="quote">${newQuote.quote}</p>
+                    <p class="source">${newQuote.source}`;
 
 
     // Append citation if quote has one
-    if (quote.citation) {
+    if (newQuote.citation) {
         quoteHtml +=
-            `<span class="citation">${quote.citation}</span>`;
+            `<span class="citation">${newQuote.citation}</span>`;
     }
 
     // Append year if quote has one
-    if (quote.year) {
+    if (newQuote.year) {
         quoteHtml +=
-            `<span class="year">${quote.year}</span>`;
+            `<span class="year">${newQuote.year}</span>`;
     }
 
     // Close HTML element
@@ -205,8 +218,8 @@ function printQuote() {
     // Append URL quote was found at
     quoteHtml +=
         `<p class="location">
-            <a class="foundAt" href="${quote.foundAt}" target="_blank">
-                ${quote.foundAt}
+            <a class="foundAt" href="${newQuote.foundAt}" target="_blank">
+                ${newQuote.foundAt}
             </a>
         </p>`;
 
@@ -214,11 +227,11 @@ function printQuote() {
     quoteHtml += "<p class=\"tags\">Tags: ";
 
     // Append each tag
-    quote.tags.forEach(function(tag, index) {
+    newQuote.tags.forEach(function(tag, index) {
         quoteHtml += tag;
 
         // Add comma if index is less than array length - 1
-        if (index < quote.tags.length - 1) {
+        if (index < newQuote.tags.length - 1) {
             quoteHtml += ", ";
         }
     });
