@@ -182,27 +182,21 @@ function printQuote() {
     // Get random quote
     let quote = getRandomQuote();
 
-    // Concatenate quote into HTML string
-    let quoteHtml = "<p class=\"quote\">" + quote.quote + "</p>";
-
-    // Append source to HTML string
-    quoteHtml += "<p class=\"source\">" + quote.source;
+    // Add quote and source into HTML string
+    let quoteHtml = `<p class="quote">${quote.quote}</p>
+                    <p class="source">${quote.source}`;
 
 
     // Append citation if quote has one
     if (quote.citation) {
         quoteHtml +=
-            "<span class=\"citation\">" +
-            quote.citation +
-            "</span>";
+            `<span class="citation">${quote.citation}</span>`;
     }
 
     // Append year if quote has one
     if (quote.year) {
         quoteHtml +=
-            "<span class=\"year\">" +
-            quote.year +
-            "</span>";
+            `<span class="year">${quote.year}</span>`;
     }
 
     // Close HTML element
@@ -210,9 +204,11 @@ function printQuote() {
 
     // Append URL quote was found at
     quoteHtml +=
-        "<p class=\"location\"><a class=\"foundAt\" href=\"" + quote.foundAt + "\" target=\"_blank\">" +
-        quote.foundAt +
-        "</a></p>";
+        `<p class="location">
+            <a class="foundAt" href="${quote.foundAt}" target="_blank">
+                ${quote.foundAt}
+            </a>
+        </p>`;
 
     // Append start of tags field
     quoteHtml += "<p class=\"tags\">Tags: ";
