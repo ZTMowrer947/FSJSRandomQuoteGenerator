@@ -77,6 +77,11 @@ body {
   color: lightgray;
 }
 
+.tags, .location {
+  text-align: right;
+  margin-right: 4em;
+}
+
 #loadQuote {
   position: fixed;
   width: 12em;
