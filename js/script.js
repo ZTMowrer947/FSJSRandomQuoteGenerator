@@ -2,7 +2,7 @@
 // Random Quote Generator
 
 // Define array of quotes
-let quotes = [
+const quotes = [
     {
         // The quote itself
         quote: "When you reach the end of your rope, tie a knot in it and hang on.",
@@ -133,7 +133,7 @@ function randomInt(min = 0, max = 1) {
 // Retrieves a random quote using a random index.
 function getRandomQuote() {
     // Generate random number between 0 and quote array length
-    let index = randomInt(0, quotes.length);
+    const index = randomInt(0, quotes.length);
 
     // Return quote at index
     return quotes[index];
@@ -153,10 +153,10 @@ function randomBackgroundColor() {
     const colorString = `rgb(${red}, ${green}, ${blue})`;
 
     // Get body element
-    let body = document.querySelector("body");
+    const body = document.querySelector("body");
 
     // Get loadQuote button
-    let loadQuote = document.getElementById('loadQuote');
+    const loadQuote = document.getElementById('loadQuote');
 
     // Set background color on both
     body.style.backgroundColor = colorString;
@@ -172,7 +172,7 @@ function printQuote() {
     clearTimeout(quoteTimeout);
 
     // Get current quote (if there is one)
-    let currentQuote = document.querySelector("p.quote");   
+    const currentQuote = document.querySelector("p.quote");   
 
     // Declare variable for random quote
     let newQuote;
@@ -232,7 +232,7 @@ function printQuote() {
     quoteHtml += "</p>";
 
     // Get quote-box div
-    let quoteBox = document.getElementById("quote-box");
+    const quoteBox = document.getElementById("quote-box");
 
     // Set innerHTML to HTML string
     quoteBox.innerHTML = quoteHtml;
@@ -245,7 +245,7 @@ function printQuote() {
 }
 
 // Get loadQuote button
-let loadQuote = document.getElementById('loadQuote');
+const loadQuote = document.getElementById('loadQuote');
 
 // Call printQuote function when loadQuote button is clicked
 loadQuote.addEventListener("click", printQuote, false);
