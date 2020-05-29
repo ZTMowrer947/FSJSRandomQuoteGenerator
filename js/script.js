@@ -123,17 +123,17 @@ let quotes = [
 ];
 
 // Random Number Generation
-// Generates a random number based from 0 (inclusive) to the given maximum (exclusive)
-function generateRandomNumberBetweenZeroAnd(max) {
-    // Generate number between 0 and maximum
-    return Math.floor(Math.random() * max); 
+// Generates a random number based from the given minimum (inclusive) to the given maximum (exclusive)
+function randomInt(min = 0, max = 1) {
+    // Generate number between min and max
+    return Math.floor(Math.random() * (max - min)) + min;
 }
 
 // Random Quote Retriever
 // Retrieves a random quote using a random index.
 function getRandomQuote() {
     // Generate random number between 0 and quote array length
-    let index = generateRandomNumberBetweenZeroAnd(quotes.length);
+    let index = randomInt(0, quotes.length);
 
     // Return quote at index
     return quotes[index];
@@ -152,7 +152,7 @@ function randomBackgroundColor() {
 
     // Randomly generate six hex digits and place them into hexDigits array as a hexadecimal digit
     for (let i = 0; i < 6; i++) {
-        let hex = generateRandomNumberBetweenZeroAnd(valuesPerHexDigit);
+        let hex = randomInt(0, valuesPerHexDigit);
 
         hexDigits.push(hex.toString(16));
     }
