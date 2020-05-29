@@ -144,21 +144,13 @@ function getRandomQuote() {
 // the hex conversion
 // Also thanks to https://www.w3schools.com/js/js_htmldom_css.asp for setting CSS styles in JavaScript
 function randomBackgroundColor() {
-    // 16 values per hexadecimal digit
-    let valuesPerHexDigit = 16;
+    // Generate random values for red, green, and blue
+    const red = randomInt(0, 192);
+    const green = randomInt(0, 192);
+    const blue = randomInt(0, 192);
 
-    // Array to hold hexadecimal digits;
-    let hexDigits = [];
-
-    // Randomly generate six hex digits and place them into hexDigits array as a hexadecimal digit
-    for (let i = 0; i < 6; i++) {
-        let hex = randomInt(0, valuesPerHexDigit);
-
-        hexDigits.push(hex.toString(16));
-    }
-
-    // Join hexadecimal digits into string with prepended hash
-    let colorHex = "#" + hexDigits.join("");
+    // Construct CSS color string from values
+    const colorString = `rgb(${red}, ${green}, ${blue})`;
 
     // Get body element
     let body = document.querySelector("body");
@@ -167,8 +159,8 @@ function randomBackgroundColor() {
     let loadQuote = document.getElementById('loadQuote');
 
     // Set background color on both
-    body.style.backgroundColor = colorHex;
-    loadQuote.style.backgroundColor = colorHex;
+    body.style.backgroundColor = colorString;
+    loadQuote.style.backgroundColor = colorString;
 }
 
 // Set initial quote timeout
